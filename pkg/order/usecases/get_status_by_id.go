@@ -6,7 +6,7 @@ import "github.com/ashkarin/ashkarin-pizza-shop/pkg/order"
 func GetStatusByID(s order.StorageGateway, id string) (order.Status, error) {
 	o, err := s.GetByID(id)
 	if err != nil {
-		return order.Unknown, err
+		return order.StatusUnknown, err
 	}
 	return o.Status, nil
 }

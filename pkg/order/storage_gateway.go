@@ -4,7 +4,7 @@ package order
 type StorageGateway interface {
 	GetByID(id string) (*Order, error)
 	DeleteByID(id string) error
-	Store(obj *Order) error
+	Place(obj *Order) (string, error)
 	Update(obj *Order) error
 	Delete(obj *Order) error
 }

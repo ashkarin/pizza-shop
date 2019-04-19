@@ -11,11 +11,11 @@ type Status int
 
 // Order stages
 const (
-	Unknown Status = iota + 1
-	Accepted
-	InProcess
-	Completed
-	Served
+	StatusUnknown Status = iota + 1
+	StatusAccepted
+	StatusInProcess
+	StatusCompleted
+	StatusServed
 )
 
 // Order is an order in the system
