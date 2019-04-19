@@ -8,4 +8,5 @@ type StorageGateway interface {
 	Update(obj *Ingredient) error
 	Delete(obj *Ingredient) error
 	Search(pattern string) ([]*Ingredient, error)
+	Clean() error
 }
