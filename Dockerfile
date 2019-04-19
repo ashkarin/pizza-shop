@@ -18,6 +18,7 @@ RUN go get github.com/onsi/gomega
 ADD /pkg $SRC_DIR/pkg
 
 # Build and copy to compiled directory
+RUN cd $SRC_DIR/cmd/server; go build; cp server /app/
 
 # Build entry script
 RUN echo '#!/bin/bash \n\
@@ -27,7 +28,8 @@ then \n\
     cd $SRC_DIR\n\
     ginkgo -r -v \n\
 else \n\
-    echo "NOT IMPLEMENTED"\n\
+    echo "SERVER"\n\
+    /app/server\n\
 fi' > /app/entry.sh && chmod +x /app/entry.sh
 
 RUN cat /app/entry.sh
